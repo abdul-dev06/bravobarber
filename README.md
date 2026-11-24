@@ -1,89 +1,98 @@
-# Global Barber Shop — Site Documentation
+# Bravo Barbershop And Salon — Site Documentation
 
-**Status: one-page design proposal, not the live site.** Built to show the
-client what a rebuild could look like — no visible "demo" framing on the page
-itself (removed on request), but `robots.txt` and a meta `noindex` tag still
-keep it out of search until it's approved. Booking buttons are placeholders —
-see Technical > Open items.
+**Status: one-page design proposal, not the live site.** Reused the build
+originally made for Global Barber Shop (same template, dark/premium direction,
+expressive motion) and repurposed every piece of content for this client.
+`robots.txt` and a meta `noindex` tag keep it out of search while it's a demo.
+Booking buttons are placeholders.
 
 ## Client
-- Business: Global Barber Shop
-- Owner: Hadish ("Hadish the Barber" on Instagram)
-- Staff: shop has a full team of barbers behind the chairs, not just Hadish —
-  no individual names/bios confirmed yet
-- Address: 3012 17 Ave SE #17, Calgary, AB T2A 0P9
-- Phone: (587) 470-8295
-- Hours: Mon–Thu 9am–9pm, Fri–Sat 9am–10pm, Sun 10am–9pm
-- Languages: not yet confirmed with client
+- Business: Bravo Barbershop And Salon
+- Address: 4908 17 Ave SE, Unit 104, Calgary, AB T2A 0V4
+- Phone: (825) 747-7527
+- Hours: Mon–Sat 9am–9pm, Sun 10am–10pm (given directly by the client)
+- Instagram: @kidubravo (https://www.instagram.com/kidubravo/)
+- Languages: not confirmed
 
-**Not yet confirmed directly with the client — pulled from public listings:**
-- Phone/address/hours cross-checked across the shop's own site (globalbarber.ca),
-  their Fresha booking page, and Yelp — all three agree, so confidence is high.
-- One older aggregator listing shows a different phone number, (403) 903-7009,
-  and simplified hours (9am–9pm every day). That number also appears on an old
-  Instagram "we're hiring" post. Treated as outdated since it doesn't match the
-  shop's own site or Fresha, but worth a one-line confirmation with the client
-  before this goes live.
+**On the business name:** their own printed thank-you card (seen in the
+Instagram feed) reads **"Bravo Cutz Barber Shop & Salon."** The client asked
+to use **"Bravo Barbershop And Salon"** on the site instead — that's what's
+live in the copy now. Worth a second look before this goes further: if the
+card is current signage/branding, a mismatched name on the site will hurt
+local SEO (NAP consistency) and could confuse anyone cross-checking Google
+against the site.
+
+**NAP confidence:** address and phone came from the client's own printed
+material (a "thank you" graphic posted to Instagram) showing the full
+business name, address and phone together — phone matches what the client
+gave directly. No independent third-party listing exists (no Google/Yelp/
+Fresha/Facebook page found for this business under either name), so there's
+no second source to cross-check against, unlike the previous project.
 
 ## Business context
 - Walk-in barbershop, no appointment required, open 7 days.
-- Services confirmed with pricing (from the shop's own site): Precision Fade
-  $30, Precision Cut & Beard $35, Facial $20.
-- Additional services listed on their Fresha page with no public pricing:
-  Beard Trim, Head Shave, Hot Towel Shave, Men's Haircut — shown on the demo
-  as "ask in shop."
-- The shop already has a live site at globalbarber.ca — this proposal is
-  positioned as a stronger alternative, not a from-scratch build.
+- No pricing available anywhere (no website, no third-party booking listing).
+  Services section lists categories only — "ask in shop" for pricing, rather
+  than inventing numbers.
+- Services shown are inferred from the actual Instagram photos used: fades,
+  custom hair-design/line-art work, beard grooming, kids' cuts. If the shop
+  also does colour, extensions or other salon services implied by "& Salon"
+  in the name, that's unconfirmed and not claimed anywhere on the page.
+- Kidu (@kidubravo) is the face of the account and appears repeatedly in the
+  shop's own posts, but ownership isn't confirmed — copy refers to "the team"
+  and credits Kidu as "the face behind @kidubravo" rather than asserting he's
+  the owner. Confirm before changing this.
 
 ## Design
-- Direction: dark & premium — near-black background, warm gold accent.
-- Motion: expressive — animated hero entrance, scroll-linked parallax on the
-  hero image, staggered reveal-on-scroll for cards and gallery.
-- Hero: full-bleed photo.
-- Font: Bebas Neue (Google Fonts, loaded via `<link>`) for display headings,
-  system font stack for body text. Should be self-hosted before launch per
-  the usual build standard.
-- Colours: `--bg #0b0b0c`, `--gold #c9a24b` — chosen for the premium-barbershop
-  read, not sourced from a client brand guide (none exists yet).
+- Same system as the Global Barber Shop build: dark & premium, expressive
+  motion, full-bleed hero, Playfair Display for headings.
+- About section redesigned without a portrait photo — none of the available
+  Instagram photos are a usable clean headshot (the only candidate is mixed
+  into a busy promotional graphic with text and logos, not croppable in this
+  environment). Centred, text-only treatment used instead.
+- Gallery uses 5 photos (not 6) in a deliberate 1-large + 4-regular layout,
+  rather than padding to 6 with a near-duplicate angle of the same haircut.
 
 ## Technical
-- Single page: `index.html`. Real multi-page structure (Services, Gallery,
-  Book, Contact) not yet built — this is a homepage-only pitch.
-- "Book Now" links scroll to an on-page panel that explains a real booking
-  widget (Fresha, since the shop already has a Fresha listing) would embed
-  there. No dead links — intentionally inert instead.
-- JSON-LD `HairSalon` schema included with real NAP + hours.
-- Live "open now / closes at" status computed client-side against
-  `America/Edmonton` time so it's correct regardless of visitor timezone.
-- No analytics, no contact form yet — homepage-only scope.
+- Single page: `index.html`, same structure as the previous build.
+- JSON-LD `HairSalon` schema with real NAP + hours; `sameAs` includes only
+  Instagram (no confirmed Facebook page for this business).
+- Live "open now / closes at" status computed against `America/Edmonton` time,
+  using the hours the client gave directly.
+- "Book Now" scrolls to an on-page panel explaining a booking widget would go
+  there — no booking platform confirmed for this client (unlike the previous
+  project, no Fresha/Square/Booksy listing was found), so no platform is named.
 
 ### Open items before this could go live
-- Confirm phone number and exact hours directly with the client (see above).
-- Real photos: gallery is temporarily sourced from Hadish's Instagram
-  (@hadishthebarber). Six images checked individually and used; the feed also
-  contained a soccer score screenshot, a hiring graphic, an airplane-window
-  photo, and one shot of a different shop's storefront ("Planet Barbershop")
-  — all excluded. No shop exterior, no wide interior shot, and no logo file
-  exist yet. All source images are ~480–640px from Instagram's CDN, fine for
-  mobile but soft at large desktop sizes — need client-supplied originals,
-  processed to AVIF/WebP per the usual pipeline.
-- Real headshot of Hadish — current one is his tiny Instagram profile photo.
-- Confirm the "4.8 stars" figure seen on one third-party review aggregator
-  against the actual Google Business Profile before using it anywhere.
-- Build out Services, Gallery, Book, and Contact as their own pages once the
-  client approves the direction, and connect the real Fresha embed.
-- Remove `noindex` and the demo banner at launch; add `sitemap.xml`, `404.html`,
-  touch icon, and OG share image (1200×630).
+- Resolve the business name question above with the client.
+- Get real pricing if they want it shown — currently none, by design, not
+  oversight.
+- A clean, unposed photo of the shop interior/exterior and of the team/owner —
+  everything currently used is a client haircut photo pulled from Instagram.
+- Confirm whether "& Salon" implies services beyond barbering that should be
+  listed.
+- Same technical gaps as the previous build: no Services/Contact/404 pages,
+  no sitemap.xml, no self-hosted fonts, no AVIF/WebP (source images are
+  360×640 from Instagram's CDN — fine for mobile, soft at large desktop
+  sizes), no real favicon/touch-icon set, no booking platform wired up.
+- This repo's git history and remote (`origin` → `abdul-dev06/globalbarber`)
+  were set up for the previous client. If this needs to go to GitHub, it
+  should go to a separate repo for Bravo — flagged to the user, not yet
+  resolved.
 
 ## Assets
-- `img/gallery-*.jpg`, `img/hadish-profile.jpg` — pulled from
-  instagram.com/hadishthebarber, Aug 2026. Temporary for the pitch; replace
-  with client-supplied originals before launch.
-- `favicon.svg` — placeholder monogram, not a real logo.
+- `img/gallery-*.jpg` — pulled from instagram.com/kidubravo, Nov 2026. Of 13
+  images fetched, 2 failed to download (bad signed URLs) and several were
+  excluded on inspection: promotional graphics with burned-in text/logos, and
+  one near-duplicate angle of a haircut already used. 5 clean, usable photos
+  remain. Temporary for the pitch — replace with client-supplied originals
+  before launch.
+- `favicon.svg` — placeholder monogram ("B"), not a real logo.
 
 ## Maintenance log
-- 2026-08-28 — Built one-page design proposal (dark/premium direction,
-  expressive motion, full-bleed hero) for client pitch. Not launched.
+- 2026-11-23 — Repurposed the Global Barber Shop build for Bravo Barbershop
+  And Salon: new NAP, new Instagram-sourced gallery, services rewritten
+  without invented pricing, About section redesigned without a portrait photo.
 
 ## Client agreement
 - Not yet in place — this is a pre-sale proposal.

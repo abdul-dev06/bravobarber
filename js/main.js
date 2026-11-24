@@ -62,13 +62,13 @@
 
   /* ---------- Open / closed status, real hours, Calgary time ---------- */
   var HOURS = [
-    { open: 10, close: 21 }, // Sunday
+    { open: 10, close: 22 }, // Sunday
     { open: 9, close: 21 },  // Monday
     { open: 9, close: 21 },  // Tuesday
     { open: 9, close: 21 },  // Wednesday
     { open: 9, close: 21 },  // Thursday
-    { open: 9, close: 22 },  // Friday
-    { open: 9, close: 22 }   // Saturday
+    { open: 9, close: 21 },  // Friday
+    { open: 9, close: 21 }   // Saturday
   ];
 
   function calgaryNow() {

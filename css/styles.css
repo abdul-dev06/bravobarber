@@ -1,5 +1,5 @@
 /* ============================================
-   Global Barber Shop — one-page demo
+   Bravo Barbershop And Salon — one-page demo
    ============================================ */
 
 :root {
@@ -477,6 +477,7 @@ section { scroll-margin-top: var(--nav-h); }
   transition: transform 0.35s ease;
 }
 .gallery-item:hover .cap, .gallery-item:focus-within .cap { transform: translateY(0); }
+.gallery-item.feature { grid-column: span 2; aspect-ratio: 16 / 9; }
 
 .gallery-cta { margin-top: 2.5rem; text-align: center; }
 .gallery-cta p { color: var(--text-dim); margin-bottom: 1rem; }
@@ -490,6 +491,13 @@ section { scroll-margin-top: var(--nav-h); }
   grid-template-columns: 1fr;
 }
 @media (min-width: 860px) { .about-grid { grid-template-columns: 220px 1fr; } }
+.about-grid.no-portrait {
+  grid-template-columns: 1fr;
+  max-width: 720px;
+  margin-inline: auto;
+  text-align: center;
+}
+.about-grid.no-portrait .about-copy p { margin-inline: auto; }
 
 .about-portrait {
   width: 150px;
